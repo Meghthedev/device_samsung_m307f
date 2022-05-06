@@ -31,17 +31,28 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 
 ## Inherit some common AOSP stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/corvus/config/common_full_phone.mk)
+
+# Corvus
+CORVUS_MAINTAINER := Meghthedev
+RAVEN_LAIR := Unofficial
 
 ## Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 ## Device identifier, this must come after all inclusions
 PRODUCT_DEVICE := m307f
-PRODUCT_NAME := aosp_m307f
+PRODUCT_NAME := corvus_m307f
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-M307F
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_SHIPPING_API_LEVEL := 28
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
+# FaceUnlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+# Pixel charging animation
+TARGET_INCLUDE_PIXEL_CHARGER := true
+# PixelExperience Stuffs
+TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
